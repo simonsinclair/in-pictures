@@ -5,9 +5,36 @@
 
 (function(w, $, undefined) {
 
-	function init() {
-		console.log('DOM ready!');
-	}
+	// HOOK
+	// - Page loaded
 
-	$(init);
+	$(w).on('load', function() {
+		$('body').addClass('loaded');
+	});
+
+	// MODULES
+	// - Gallery
+
+	var Gallery = {
+
+		config: {
+			numImages: 10,
+			imageWidth: 976
+		},
+
+		init: function(id) {
+			Gallery.$elem = $(id);
+			Gallery.setImagesWidth();
+		},
+
+		setImagesWidth: function() {
+			var imagesWidth = Gallery.config.imageWidth * Gallery.config.numImages;
+			$('#js-gallery-images').css('width', imagesWidth);
+		}
+
+	};
+
+	$(function() {
+		Gallery.init('#js-gallery');
+	});
 })(this, jQuery);
