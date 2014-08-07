@@ -29,7 +29,7 @@
 
 		setImagesWidth: function() {
 			var imagesWidth = Gallery.config.imageWidth * Gallery.config.numImages;
-			$('#js-gallery-images').css('width', imagesWidth);
+			$('#js-gallery-images', Gallery.$elem).css('width', imagesWidth);
 		}
 
 	};
