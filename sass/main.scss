@@ -1,6 +1,9 @@
 // main.scss
 //
 
+$body-bg: #231F20;
+$masthead-bg: #C92026;
+
 *,
 *:before,
 *:after {
@@ -11,8 +14,50 @@
 
 html {}
 body {
-	color: #333;
+	background-color: $body-bg;
+	color: #FFF;
 	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3 {}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+// BODY
+//
+.blq {
+	background-color: #FFF;
+	height: 40px;
+}
+.masthead {
+	background-color: $masthead-bg;
+	height: 104px;
+}
+.footer {}
+
+// PAGE
+//
+.page {
+	margin: 0 auto;
+	padding: 0 16px;
+	max-width: 1008px;
+}
+
+// OBJECTS
+//
+.nav {
+	@extend .clearfix;
+	
+	list-style: none;
+	padding-left: 0;
+	
+	> li {
+		float: left;
+	}
 }
 
 // Utility
