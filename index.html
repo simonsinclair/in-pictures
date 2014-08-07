@@ -27,8 +27,8 @@
 			<div class="gallery__toolbar">
 				<p class="gallery__image-of"><span id="js-image-of">1</span> of 12</p>
 				<ul class="gallery__tools nav">
-					<li>Hide thumbnails</li>
-					<li>Hide caption</li>
+					<li id="js-toggle-thumbs">Hide thumbnails</li>
+					<li id="js-toggle-caption">Hide caption</li>
 					<li class="tools__share">Share</li>
 				</ul>
 			</div>
@@ -47,13 +47,13 @@
 					<li><img src="img/gallery/10.jpg" alt="" width="976" height="549"></li>
 				</ul>
 
-				<p class="gallery__caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat pulvinar lorem quis pellentesque. Mauris sit amet orci vitae lectus tristique convallis. Cras vitae lacus non diam accumsan commodo quis nec urna.</p>
+				<p id="js-gallery-caption" class="gallery__caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat pulvinar lorem quis pellentesque. Mauris sit amet orci vitae lectus tristique convallis. Cras vitae lacus non diam accumsan commodo quis nec urna.</p>
 
-				<button class="gallery__previous"><</button>
-				<button class="gallery__next">></button>
+				<button id="js-gallery-previous" class="gallery__previous"><</button>
+				<button id="js-gallery-next" class="gallery__next">></button>
 			</div>
 
-			<div class="gallery__thumbs">
+			<div id="js-gallery-thumbs" class="gallery__thumbs">
 				<ul class="nav">
 					<li><img src="img/gallery/1.jpg" alt="" ></li>
 					<li><img src="img/gallery/2.jpg" alt="" ></li>
@@ -66,8 +66,6 @@
 					<li><img src="img/gallery/9.jpg" alt="" ></li>
 					<li><img src="img/gallery/10.jpg" alt="" ></li>
 				</ul>
-				
-				<div class="active-thumb"></div>
 			</div>
 		</div><!-- /.gallery -->
 
@@ -81,7 +79,7 @@
 		</div>
 
 		<div class="more-galleries">
-			<h2>More galleries</h2>
+			<h2>More galleries ></h2>
 			<ul class="nav">
 				<li>
 					<a href="#">
@@ -108,9 +106,7 @@
 		</div>
 	</div>
 	
-	<div class="footer">
-		
-	</div>
+	<div class="footer"></div>
 
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="js/main.js"></script>
