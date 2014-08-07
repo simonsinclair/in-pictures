@@ -81,11 +81,3 @@ $active-thumb-bd: #ED1C24;
 			width: ( (976px - (16 * 5) ) / 6 );
 		}
 	}
-		.active-thumb {
-			border: 2px solid $active-thumb-bd;
-			height: 83.984px;
-			position: absolute;
-				top: 16px; left: 16px;
-			width: ( (976px - (16 * 5) ) / 6 );
-			z-index: 10;
-		}
