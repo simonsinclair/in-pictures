@@ -1,1 +1,15 @@
 // _gallery.scss
+.gallery {}
+	.gallery__toolbar {}
+		.gallery__image-of {}
+		.gallery__tools {}
+
+	.gallery__viewport {
+		overflow: hidden;
+	}
+		.gallery__images {}
+		.gallery__caption {}
+		.gallery__next {}
+		.gallery__previous {}
+
+	.gallery__thumbnails {}

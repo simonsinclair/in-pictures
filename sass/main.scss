@@ -16,6 +16,7 @@ html {}
 body {
 	background-color: $body-bg;
 	color: #FFF;
+	font-size: 14px;
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
 }
@@ -59,7 +60,7 @@ a {
 .share {
 	
 	li {
-		margin-right: 8px;
+		margin-right: 16px;
 	}
 	a {
 		display: block;
@@ -76,6 +77,12 @@ a {
 	}
 	.twitter {
 		background-color: #52C5F1;
+	}
+}
+.more-galleries {
+	
+	li {
+		margin-right: 16px;
 	}
 }
 
