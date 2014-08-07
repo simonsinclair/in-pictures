@@ -22,7 +22,7 @@
 			imageWidth: 976
 		},
 
-		isCaptionsVisible: false,
+		isCaptionVisible: false,
 		isThumbsVisible: true,
 
 		init: function(id) {
@@ -56,8 +56,15 @@
 			console.log(this);
 		},
 
-		toggleCaption: function(e) {
-			console.log(this);
+		toggleCaption: function() {
+			if(Gallery.isCaptionVisible) {
+				$('#js-toggle-caption', Gallery.$self).text('Hide caption');
+				$('#js-gallery-caption', Gallery.$self).removeClass('gallery__caption--hidden');
+			} else {
+				$('#js-toggle-caption', Gallery.$self).text('Show caption');
+				$('#js-gallery-caption', Gallery.$self).addClass('gallery__caption--hidden');
+			}
+			Gallery.isCaptionVisible = !Gallery.isCaptionVisible;
 		},
 
 		navigateToThumb: function(e) {

@@ -44,9 +44,12 @@ $active-thumb-bd: #ED1C24;
 			padding: 16px;
 			position: absolute;
 				bottom: 0; left: 0;
-			width: 600px;
+			width: 646px;
 			z-index: 10;
 		}
+			.gallery__caption--hidden {
+				opacity: 0;
+			}
 		.gallery__next,
 		.gallery__previous {
 			background-color: rgba(0,0,0,0.5);
