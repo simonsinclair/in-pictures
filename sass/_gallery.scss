@@ -1,18 +1,54 @@
 // _gallery.scss
-.gallery {}
-	.gallery__toolbar {}
-		.gallery__image-of {}
-		.gallery__tools {}
+.gallery {
+	
+	img {
+		display: block;
+	}
+}
+	.gallery__toolbar {
+		@extend .clearfix;
+	}
+		.gallery__image-of {
+			float: left;
+			margin-left: 16px;
+		}
+		.gallery__tools {
+			float: right;
+			margin-right: 16px;
+			
+			li {
+				margin-left: 48px;
+			}
+			a {
+				padding: 8px;
+			}
+		}
 			.tools__share {
 				color: #69BD45;
 			}
 
 	.gallery__viewport {
 		overflow: hidden;
+		position: relative;
 	}
 		.gallery__images {}
-		.gallery__caption {}
-		.gallery__next {}
-		.gallery__previous {}
+		.gallery__caption {
+			background-color: rgba(0,0,0,0.5);
+			padding: 16px;
+			position: absolute;
+				bottom: 0; left: 0;
+			width: 600px;
+		}
+		.gallery__next,
+		.gallery__previous {
+			position: absolute;
+				top: 50%;
+		}
+		.gallery__next {
+			right: 0;
+		}
+		.gallery__previous {
+			left: 0;
+		}
 
 	.gallery__thumbnails {}
