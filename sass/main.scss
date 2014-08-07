@@ -55,6 +55,29 @@ a {
 .breadcrumb {
 	font-size: 20px;
 }
+@import 'gallery';
+.share {
+	
+	li {
+		margin-right: 8px;
+	}
+	a {
+		display: block;
+		font-weight: bold;
+		line-height: 40px;
+		text-align: center;
+		width: 230px;
+	}
+	.email {
+		background-color: #615F5D;
+	}
+	.facebook {
+		background-color: #3C5A98;
+	}
+	.twitter {
+		background-color: #52C5F1;
+	}
+}
 
 // OBJECTS
 //
