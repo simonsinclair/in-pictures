@@ -1,4 +1,6 @@
 // _gallery.scss
+$active-thumb-bd: #ED1C24;
+
 .gallery {
 	
 	img {
@@ -7,19 +9,20 @@
 }
 	.gallery__toolbar {
 		@extend .clearfix;
+		margin-bottom: 16px;
 	}
 		.gallery__image-of {
 			float: left;
-			margin-left: 16px;
+			margin: 0 8px 0;
+			padding: 8px;
 		}
 		.gallery__tools {
 			float: right;
-			margin-right: 16px;
+			margin: 0 8px 0;
 			
 			li {
+				cursor: pointer;
 				margin-left: 48px;
-			}
-			a {
 				padding: 8px;
 			}
 		}
@@ -31,18 +34,30 @@
 		overflow: hidden;
 		position: relative;
 	}
-		.gallery__images {}
+		.gallery__images {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
 		.gallery__caption {
 			background-color: rgba(0,0,0,0.5);
+			margin: 0;
 			padding: 16px;
 			position: absolute;
 				bottom: 0; left: 0;
 			width: 600px;
+			z-index: 10;
 		}
 		.gallery__next,
 		.gallery__previous {
+			background-color: rgba(0,0,0,0.5);
+			height: 64px;
+			line-height: 64px;
 			position: absolute;
 				top: 50%;
+			transform: transformY(-50%);
+			text-align: center;
+			width: 64px;
+			z-index: 10;
 		}
 		.gallery__next {
 			right: 0;
@@ -51,4 +66,26 @@
 			left: 0;
 		}
 
-	.gallery__thumbnails {}
+	.gallery__thumbs {
+		margin-left: -16px;
+		position: relative;
+		
+		ul {
+			margin-top: 0;
+			margin-bottom: 0;
+		}		
+		li {
+			cursor: pointer;
+			margin-top: 16px;
+			margin-left: 16px;
+			width: ( (976px - (16 * 5) ) / 6 );
+		}
+	}
+		.active-thumb {
+			border: 2px solid $active-thumb-bd;
+			height: 83.984px;
+			position: absolute;
+				top: 16px; left: 16px;
+			width: ( (976px - (16 * 5) ) / 6 );
+			z-index: 10;
+		}
