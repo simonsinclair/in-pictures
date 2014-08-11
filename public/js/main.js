@@ -34,7 +34,6 @@
 		bindEvents: function() {
 			$('#js-gallery-previous').on('click', Gallery.previousImage);
 			$('#js-gallery-next').on('click', Gallery.nextImage);
-			$('#js-toggle-thumbs').on('click', Gallery.toggleThumbs);
 			$('#js-toggle-caption').on('click', Gallery.toggleCaption);
 			$('#js-gallery-thumbs').on('click', 'li', Gallery.navigateToThumb);
 		},
@@ -52,8 +51,6 @@
 			console.log(this);
 		},
 
-		toggleThumbs: function(e) {
-			console.log(this);
 		},
 
 		toggleCaption: function() {
