@@ -78,7 +78,7 @@
 		},
 
 		navigateToImage: function(index) {
-			console.log(index);
+
 			// Don't navigate if we're already on that image
 			if(index === Gallery.activeImage) {
 				return;
