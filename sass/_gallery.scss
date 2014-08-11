@@ -57,7 +57,7 @@ $active-thumb-bd: #ED1C24;
 			line-height: 64px;
 			position: absolute;
 				top: 50%;
-			transform: transformY(-50%);
+			transform: translateY(-50%);
 			text-align: center;
 			width: 64px;
 			z-index: 10;
