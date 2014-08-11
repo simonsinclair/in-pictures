@@ -91,8 +91,9 @@
 			// Update current index
 			Gallery.activeImage = index;
 
-			// Update thumbnail appearances
+			// Update appearances
 			Gallery.updateThumbs();
+			Gallery.updatePreviousNext();
 		},
 
 		updateThumbs: function() {
@@ -100,6 +101,23 @@
 			$('li', Gallery.$thumbs)
 				.eq(Gallery.activeImage)
 				.addClass('active');
+		},
+
+		updatePreviousNext: function() {
+
+			// By default
+			$('#js-gallery-previous', Gallery.$self).removeClass('deactivated');
+			$('#js-gallery-next', Gallery.$self).removeClass('deactivated');
+
+			// At the beginning
+			if(Gallery.activeImage <= 0) {
+				$('#js-gallery-previous', Gallery.$self).addClass('deactivated');
+			}
+
+			// At the end
+			if(Gallery.activeImage >= (Gallery.config.numImages - 1)) {
+				$('#js-gallery-next', Gallery.$self).addClass('deactivated');
+			}
 		}
 
 	};
