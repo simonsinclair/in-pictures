@@ -4,6 +4,21 @@
 $body-bg: #231F20;
 $masthead-bg: #C92026;
 
+@font-face {
+	font-family: 'GELIconsFull';
+	src: url('../fonts/gelnewsicons-regular-webfont.eot');
+	src: url('../fonts/gelnewsicons-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/gelnewsicons-regular-webfont.woff') format('woff'),
+		 url('../fonts/gelnewsicons-regular-webfont.ttf')  format('truetype'),
+		 url('../fonts/gelnewsicons-regular-webfont.svgz#GELIconsFullRegular') format('svg'),
+		 url('../fonts/gelnewsicons-regular-webfont.svg#GELIconsFullRegular')  format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// BASE
+//
+
 *,
 *:before,
 *:after {
@@ -39,6 +54,9 @@ img {
 button {
 	border: none;
 	padding: 0;
+}
+.icon {
+	font-family: 'GELIconsFull';
 }
 
 // BODY
