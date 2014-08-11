@@ -23,7 +23,7 @@
 		},
 
 		isCaptionVisible: false,
-		isThumbsVisible: true,
+		isThumbsTruncated: true,
 		activeImage: 0,
 
 		init: function(id) {
@@ -118,6 +118,11 @@
 			if(Gallery.activeImage >= (Gallery.config.numImages - 1)) {
 				$('#js-gallery-next', Gallery.$self).addClass('deactivated');
 			}
+		},
+
+		toggleThumbsTruncated: function() {
+			Gallery.isThumbsTruncated = !Gallery.isThumbsTruncated;
+			console.log(Gallery.isThumbsTruncated);
 		}
 
 	};
