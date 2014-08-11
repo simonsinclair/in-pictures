@@ -37,6 +37,7 @@ $active-thumb: #ED1C24;
 		.gallery__images {
 			margin-top: 0;
 			margin-bottom: 0;
+			transition: transform 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
 		}
 		.gallery__caption {
 			background-color: rgba(0,0,0,0.5);
@@ -99,3 +100,4 @@ $active-thumb: #ED1C24;
 			transition: opacity 150ms ease;
 		}
 	}
+	.gallery__thumbs--hidden {}
