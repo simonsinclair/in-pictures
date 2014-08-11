@@ -27,7 +27,6 @@
 			<div class="gallery__toolbar">
 				<p class="gallery__image-of"><span id="js-image-of">1</span> of 12</p>
 				<ul class="gallery__tools nav">
-					<li id="js-toggle-thumbs">Hide thumbnails</li>
 					<li id="js-toggle-caption">Hide caption</li>
 					<li class="tools__share">Share</li>
 				</ul>
@@ -49,22 +48,22 @@
 
 				<p id="js-gallery-caption" class="gallery__caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat pulvinar lorem quis pellentesque. Mauris sit amet orci vitae lectus tristique convallis. Cras vitae lacus non diam accumsan commodo quis nec urna.</p>
 
-				<button id="js-gallery-previous" class="gallery__previous"><</button>
-				<button id="js-gallery-next" class="gallery__next">></button>
+				<button id="js-gallery-previous" class="gallery__previous"><span class="icon">&#xF000;</span></button>
+				<button id="js-gallery-next" class="gallery__next"><span class="icon">&#xF001;</span></button>
 			</div>
 
-			<div id="js-gallery-thumbs" class="gallery__thumbs">
+			<div id="js-gallery-thumbs" class="gallery__thumbs gallery__thumbs--hidden">
 				<ul class="nav">
-					<li><img src="img/gallery/1.jpg" alt="" ></li>
-					<li><img src="img/gallery/2.jpg" alt="" ></li>
-					<li><img src="img/gallery/3.jpg" alt="" ></li>
-					<li><img src="img/gallery/4.jpg" alt="" ></li>
-					<li><img src="img/gallery/5.jpg" alt="" ></li>
-					<li><img src="img/gallery/6.jpg" alt="" ></li>
-					<li><img src="img/gallery/7.jpg" alt="" ></li>
-					<li><img src="img/gallery/8.jpg" alt="" ></li>
-					<li><img src="img/gallery/9.jpg" alt="" ></li>
-					<li><img src="img/gallery/10.jpg" alt="" ></li>
+					<li class="active"><img src="img/gallery/1.jpg" alt="" width="149" height="84"></li>
+					<li><img src="img/gallery/2.jpg" alt="" width="149" height="84"></li>
+					<li><img src="img/gallery/3.jpg" alt="" width="149" height="84"></li>
+					<li><img src="img/gallery/4.jpg" alt="" width="149" height="84"></li>
+					<li><img src="img/gallery/5.jpg" alt="" width="149" height="84"></li>
+					<li><img src="img/gallery/6.jpg" alt="" width="149" height="84"></li>
+					<li><img src="img/gallery/7.jpg" alt="" width="149" height="84"></li>
+					<li><img src="img/gallery/8.jpg" alt="" width="149" height="84"></li>
+					<li><img src="img/gallery/9.jpg" alt="" width="149" height="84"></li>
+					<li><img src="img/gallery/10.jpg" alt="" width="149" height="84"></li>
 				</ul>
 			</div>
 		</div><!-- /.gallery -->
@@ -79,7 +78,7 @@
 		</div>
 
 		<div class="more-galleries">
-			<h2>More galleries ></h2>
+			<h2>More galleries <span class="icon">&#xF001;</span></h2>
 			<ul class="nav">
 				<li>
 					<a href="#">

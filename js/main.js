@@ -24,9 +24,11 @@
 
 		isCaptionVisible: false,
 		isThumbsVisible: true,
+		activeImage: 0,
 
 		init: function(id) {
-			Gallery.$elem = $(id);
+			Gallery.$elem 	= $(id);
+			Gallery.$thumbs = $('#js-gallery-thumbs', Gallery.$elem);
 			Gallery.bindEvents();
 			Gallery.setImagesWidth();
 		},
@@ -34,9 +36,8 @@
 		bindEvents: function() {
 			$('#js-gallery-previous').on('click', Gallery.previousImage);
 			$('#js-gallery-next').on('click', Gallery.nextImage);
-			$('#js-toggle-thumbs').on('click', Gallery.toggleThumbs);
 			$('#js-toggle-caption').on('click', Gallery.toggleCaption);
-			$('#js-gallery-thumbs').on('click', 'li', Gallery.navigateToThumb);
+			Gallery.$thumbs.on('click', 'li', Gallery.navigateViaThumb);
 		},
 
 		setImagesWidth: function() {
@@ -45,15 +46,17 @@
 		},
 
 		previousImage: function(e) {
-			console.log(this);
+			if(Gallery.activeImage <= 0) {
+				return;
+			}
+			Gallery.navigateToImage( Gallery.activeImage - 1 );
 		},
 
 		nextImage: function(e) {
-			console.log(this);
-		},
-
-		toggleThumbs: function(e) {
-			console.log(this);
+			if(Gallery.activeImage >= (Gallery.config.numImages - 1)) {
+				return;
+			}
+			Gallery.navigateToImage( Gallery.activeImage + 1 );
 		},
 
 		toggleCaption: function() {
@@ -67,8 +70,36 @@
 			Gallery.isCaptionVisible = !Gallery.isCaptionVisible;
 		},
 
-		navigateToThumb: function(e) {
-			console.log(this);
+		navigateViaThumb: function() {
+			var index = $('li', Gallery.$thumbs).index(this);
+
+			// Navigate to image
+			Gallery.navigateToImage(index);
+		},
+
+		navigateToImage: function(index) {
+			console.log(index);
+			// Don't navigate if we're already on that image
+			if(index === Gallery.activeImage) {
+				return;
+			}
+
+			// Move carousel
+			var position = Gallery.config.imageWidth * index;
+			$('#js-gallery-images', Gallery.$self).css('transform', 'translateX('+ -position +'px)');
+
+			// Update current index
+			Gallery.activeImage = index;
+
+			// Update thumbnail appearances
+			Gallery.updateThumbs();
+		},
+
+		updateThumbs: function() {
+			$('li.active', Gallery.$thumbs).removeClass('active');
+			$('li', Gallery.$thumbs)
+				.eq(Gallery.activeImage)
+				.addClass('active');
 		}
 
 	};
