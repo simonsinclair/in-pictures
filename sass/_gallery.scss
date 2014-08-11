@@ -53,7 +53,7 @@ $active-thumb: #ED1C24;
 			}
 		.gallery__next,
 		.gallery__previous {
-			background-color: rgba(0,0,0,0.5);
+			background-color: rgba(0,0,0,0.85);
 			height: 64px;
 			line-height: 64px;
 			position: absolute;
@@ -65,8 +65,7 @@ $active-thumb: #ED1C24;
 			z-index: 10;
 			
 			&.deactivated {
-				background-color: rgba(0,0,0,0.25);
-				color: #000;
+				opacity: 0.5;
 				cursor: default;
 				transition: all 150ms ease;
 			}
