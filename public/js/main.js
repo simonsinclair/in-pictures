@@ -116,6 +116,7 @@
 			// Update appearances
 			Gallery.updateThumbs();
 			Gallery.updatePreviousNext();
+			Gallery.updateImageOf();
 		},
 
 		updateThumbs: function() {
@@ -142,9 +143,12 @@
 			}
 		},
 
+		updateImageOf: function() {
+			$('#js-image-of').text( Gallery.activeImage + 1 );
+		},
+
 		toggleThumbsTruncated: function() {
 			Gallery.isThumbsTruncated = !Gallery.isThumbsTruncated;
-			console.log(Gallery.isThumbsTruncated);
 		}
 
 	};
