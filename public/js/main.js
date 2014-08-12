@@ -45,7 +45,7 @@
 		},
 
 		isCaptionVisible: false,
-		isThumbsTruncated: true,
+		isShowMoreThumbs: true,
 		activeImage: 0,
 
 		init: function(id) {
@@ -60,6 +60,7 @@
 			$('#js-gallery-next').on('click', Gallery.nextImage);
 			$('#js-toggle-caption').on('click', Gallery.toggleCaption);
 			Gallery.$thumbs.on('click', 'li', Gallery.navigateViaThumb);
+			$('#js-toggle-more-thumbs').on('click', Gallery.toggleMoreThumbs);
 		},
 
 		setImagesWidth: function() {
@@ -147,8 +148,8 @@
 			$('#js-image-of').text( Gallery.activeImage + 1 );
 		},
 
-		toggleThumbsTruncated: function() {
-			Gallery.isThumbsTruncated = !Gallery.isThumbsTruncated;
+		toggleMoreThumbs: function() {
+			Gallery.isShowMoreThumbs = !Gallery.isShowMoreThumbs;
 		}
 
 	};

@@ -88,6 +88,8 @@ $active-thumb: #ED1C24;
 
 	.gallery__thumbs {
 		margin-left: -16px;
+		height: 138px;
+		overflow: hidden;
 		position: relative;
 		
 		ul {
@@ -116,4 +118,15 @@ $active-thumb: #ED1C24;
 			transition: opacity 150ms linear;
 		}
 	}
-	.gallery__thumbs--hidden {}
+	.gallery__thumbs--more {}
+		.thumbs__toggle {
+			border-bottom: 1px solid #333;
+			cursor: pointer;
+			margin: 0;
+			position: absolute;
+				right: 0; bottom: 0; left: 16px;
+			text-align: center;
+			z-index: 10;
+			
+			&:hover {}
+		}
