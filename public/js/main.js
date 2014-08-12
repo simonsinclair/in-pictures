@@ -3,13 +3,35 @@
 
 "use strict";
 
-(function(w, $, undefined) {
+(function(win, $, undefined) {
+
+	var doc = win.document;
 
 	// HOOK
-	// - Page loaded
+	// Page loaded
 
-	$(w).on('load', function() {
+	$(win).on('load', function() {
 		$('body').addClass('loaded');
+	});
+
+	// Keyboard shortcuts
+	$(doc).on('keyup', function(e) {
+		switch(e.which) {
+			case 37:
+				Gallery.previousImage();				
+				break;
+
+			case 39:
+				Gallery.nextImage();
+				break;
+
+			case 67:
+				Gallery.toggleCaption();
+				break;
+
+			default:
+				console.log(e.which);
+		}
 	});
 
 	// MODULES
