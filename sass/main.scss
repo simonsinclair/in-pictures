@@ -38,8 +38,12 @@ body {
 h1 {}
 h2 {
 	font-size: 32px;
-	font-weight: normal;
+	margin: 12px 0;
 	letter-spacing: -1px;
+	
+	~ p {
+		margin-top: 0;
+	}
 }
 h3 {
 	font-size: 20px;
