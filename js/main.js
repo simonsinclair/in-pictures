@@ -138,31 +138,9 @@
 			}
 
 			// If less thumbs are show, update the row position.
-			var rowMultiplier = 0;
-
-			// IM A DESIGNER, OK?! (Help).
-			switch (Gallery.activeImage) {
-				case 6:
-				case 7:
-				case 8:
-				case 9:
-				case 10:
-				case 11:
-					rowMultiplier = 1;
-					break;
-
-				case 12:
-				case 13:
-				case 14:
-				case 15:
-				case 16:
-				case 17:
-					rowMultiplier = 2;
-					break;
-
-				default:
-			}
-			var rowPos = rowMultiplier * (Gallery.config.thumbHeight + 16);
+			// Thanks, Bogdan!
+			var rowMultiplier = ~~(Gallery.activeImage / 6);
+			var rowPos        = rowMultiplier * (Gallery.config.thumbHeight + 16);
 
 			$('#js-gallery-thumbs ul').css('transform', 'translateY('+ -rowPos +'px)');
 		},
@@ -189,9 +167,16 @@
 		},
 
 		toggleMoreThumbs: function() {
-			Gallery.updateThumbRow();
-			Gallery.$thumbs.toggleClass('gallery__thumbs--more', !Gallery.isShowMoreThumbs);
+			if(Gallery.isShowMoreThumbs) {
+				Gallery.$thumbs.removeClass('gallery__thumbs--more');
+				$('#js-more-thumbs-toggle').html('Show more <span class="icon">&#xF003;</span>');
+			} else {
+				Gallery.$thumbs.addClass('gallery__thumbs--more');
+				$('#js-more-thumbs-toggle').html('Show less <span class="icon">&#xF002;</span>');
+			}
+
 			Gallery.isShowMoreThumbs = !Gallery.isShowMoreThumbs;
+			Gallery.updateThumbRow();
 		}
 
 	};
