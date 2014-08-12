@@ -41,11 +41,12 @@
 
 		config: {
 			numImages: 10,
-			imageWidth: 976
+			imageWidth: 976,
+			thumbHeight: 84
 		},
 
 		isCaptionVisible: false,
-		isShowMoreThumbs: true,
+		isShowMoreThumbs: false,
 		activeImage: 0,
 
 		init: function(id) {
@@ -115,16 +116,55 @@
 			Gallery.activeImage = index;
 
 			// Update appearances
-			Gallery.updateThumbs();
+			Gallery.updateActiveThumb();
+			Gallery.updateThumbRow();
 			Gallery.updatePreviousNext();
 			Gallery.updateImageOf();
 		},
 
-		updateThumbs: function() {
+		updateActiveThumb: function() {
 			$('li.active', Gallery.$thumbs).removeClass('active');
 			$('li', Gallery.$thumbs)
 				.eq(Gallery.activeImage)
 				.addClass('active');
+		},
+
+		updateThumbRow: function() {
+
+			// If more thumbs are shown, don't touch the row position.
+			if(Gallery.isShowMoreThumbs) {
+				$('#js-gallery-thumbs ul').css('transform', 'translateY(0px)');
+				return;
+			}
+
+			// If less thumbs are show, update the row position.
+			var rowMultiplier = 0;
+
+			// IM A DESIGNER, OK?! (Help).
+			switch (Gallery.activeImage) {
+				case 6:
+				case 7:
+				case 8:
+				case 9:
+				case 10:
+				case 11:
+					rowMultiplier = 1;
+					break;
+
+				case 12:
+				case 13:
+				case 14:
+				case 15:
+				case 16:
+				case 17:
+					rowMultiplier = 2;
+					break;
+
+				default:
+			}
+			var rowPos = rowMultiplier * (Gallery.config.thumbHeight + 16);
+
+			$('#js-gallery-thumbs ul').css('transform', 'translateY('+ -rowPos +'px)');
 		},
 
 		updatePreviousNext: function() {
@@ -149,7 +189,8 @@
 		},
 
 		toggleMoreThumbs: function() {
-			Gallery.$thumbs.toggleClass('gallery__thumbs--more', Gallery.isShowMoreThumbs);
+			Gallery.updateThumbRow();
+			Gallery.$thumbs.toggleClass('gallery__thumbs--more', !Gallery.isShowMoreThumbs);
 			Gallery.isShowMoreThumbs = !Gallery.isShowMoreThumbs;
 		}
 
