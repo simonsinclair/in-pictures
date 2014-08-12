@@ -3,13 +3,35 @@
 
 "use strict";
 
-(function(w, $, undefined) {
+(function(win, $, undefined) {
+
+	var doc = win.document;
 
 	// HOOK
-	// - Page loaded
+	// Page loaded
 
-	$(w).on('load', function() {
+	$(win).on('load', function() {
 		$('body').addClass('loaded');
+	});
+
+	// Keyboard shortcuts
+	$(doc).on('keyup', function(e) {
+		switch(e.which) {
+			case 37:
+				Gallery.previousImage();				
+				break;
+
+			case 39:
+				Gallery.nextImage();
+				break;
+
+			case 67:
+				Gallery.toggleCaption();
+				break;
+
+			default:
+				console.log(e.which);
+		}
 	});
 
 	// MODULES
@@ -94,6 +116,7 @@
 			// Update appearances
 			Gallery.updateThumbs();
 			Gallery.updatePreviousNext();
+			Gallery.updateImageOf();
 		},
 
 		updateThumbs: function() {
@@ -120,9 +143,12 @@
 			}
 		},
 
+		updateImageOf: function() {
+			$('#js-image-of').text( Gallery.activeImage + 1 );
+		},
+
 		toggleThumbsTruncated: function() {
 			Gallery.isThumbsTruncated = !Gallery.isThumbsTruncated;
-			console.log(Gallery.isThumbsTruncated);
 		}
 
 	};
