@@ -149,8 +149,8 @@
 		},
 
 		toggleMoreThumbs: function() {
+			Gallery.$thumbs.toggleClass('gallery__thumbs--more', Gallery.isShowMoreThumbs);
 			Gallery.isShowMoreThumbs = !Gallery.isShowMoreThumbs;
-			console.log(Gallery.isShowMoreThumbs);
 		}
 
 	};
