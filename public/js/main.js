@@ -167,9 +167,16 @@
 		},
 
 		toggleMoreThumbs: function() {
-			Gallery.updateThumbRow();
-			Gallery.$thumbs.toggleClass('gallery__thumbs--more', !Gallery.isShowMoreThumbs);
+			if(Gallery.isShowMoreThumbs) {
+				Gallery.$thumbs.removeClass('gallery__thumbs--more');
+				$('#js-more-thumbs-toggle').html('Show more <span class="icon">&#xF003;</span>');
+			} else {
+				Gallery.$thumbs.addClass('gallery__thumbs--more');
+				$('#js-more-thumbs-toggle').html('Show less <span class="icon">&#xF002;</span>');
+			}
+
 			Gallery.isShowMoreThumbs = !Gallery.isShowMoreThumbs;
+			Gallery.updateThumbRow();
 		}
 
 	};
