@@ -42,6 +42,7 @@ $active-thumb: #ED1C24;
 	.gallery__viewport {
 		overflow: hidden;
 		position: relative;
+		z-index: 10;
 	}
 		.gallery__images {
 			margin-top: 0;
@@ -55,7 +56,7 @@ $active-thumb: #ED1C24;
 			position: absolute;
 				bottom: 0; left: 0;
 			width: 646px;
-			z-index: 10;
+			z-index: 20;
 		}
 			.gallery__caption--hidden {
 				opacity: 0;
@@ -71,7 +72,7 @@ $active-thumb: #ED1C24;
 			transition: all 150ms linear;
 			text-align: center;
 			width: 64px;
-			z-index: 10;
+			z-index: 20;
 			
 			&.deactivated {
 				opacity: 0.5;
@@ -92,6 +93,7 @@ $active-thumb: #ED1C24;
 		overflow: hidden;
 		position: relative;
 		transition: height 150ms ease-out;
+		z-index: 0;
 		
 		ul {
 			margin-top: 0;
