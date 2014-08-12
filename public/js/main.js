@@ -60,7 +60,7 @@
 			$('#js-gallery-next').on('click', Gallery.nextImage);
 			$('#js-toggle-caption').on('click', Gallery.toggleCaption);
 			Gallery.$thumbs.on('click', 'li', Gallery.navigateViaThumb);
-			$('#js-toggle-more-thumbs').on('click', Gallery.toggleMoreThumbs);
+			$('#js-more-thumbs-toggle').on('click', Gallery.toggleMoreThumbs);
 		},
 
 		setImagesWidth: function() {
@@ -149,6 +149,7 @@
 		},
 
 		toggleMoreThumbs: function() {
+			Gallery.$thumbs.toggleClass('gallery__thumbs--more', Gallery.isShowMoreThumbs);
 			Gallery.isShowMoreThumbs = !Gallery.isShowMoreThumbs;
 		}
 
