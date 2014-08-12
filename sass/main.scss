@@ -2,7 +2,7 @@
 //
 
 $body-bg: #231F20;
-$masthead-bg: #C92026;
+$brand: #C92026;
 
 @font-face {
 	font-family: 'GELIconsFull';
@@ -71,7 +71,7 @@ button {
 	height: 40px;
 }
 .masthead {
-	background-color: $masthead-bg;
+	background-color: $brand;
 	height: 104px;
 }
 .footer {
